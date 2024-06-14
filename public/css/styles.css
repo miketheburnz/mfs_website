@@ -11,18 +11,32 @@ body {
 }
 
 .jumbotron {
-    background-color: #004080;
+    background-color: #336699; /* Lighter blue background */
     color: white;
     margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.jumbotron::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    transform: rotate(45deg);
+    left: -50%;
+    top: 0;
 }
 
 .jumbotron .btn-primary {
-    background-color: #ff8000;
+    background-color: #ff6666; /* Light red color */
     border: none;
 }
 
 footer {
-    background-color: #004080;
+    background-color: #336699; /* Lighter blue background */
     color: white;
     text-align: center;
     padding: 10px;
@@ -46,4 +60,53 @@ footer {
 
 .was-validated .form-group .invalid-feedback {
     display: block;
+}
+
+/* Additional Stylish Elements */
+
+header.jumbotron {
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section#services-overview {
+    background: linear-gradient(to bottom right, #ffffff 50%, #f4f4f4);
+    padding: 4rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section#services-overview h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #336699;
+}
+
+section#services-overview .col-md-3 {
+    padding: 2rem;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+section#services-overview .col-md-3:hover {
+    transform: translateY(-10px);
+}
+
+footer {
+    padding: 2rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+footer img {
+    margin: 0.5rem;
+    filter: brightness(0) invert(1);
+}
+
+footer p {
+    margin-top: 1rem;
+    font-size: 1rem;
 }
