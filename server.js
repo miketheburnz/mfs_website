@@ -13,7 +13,7 @@ app.post('/submit-form', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'your-email@gmail.com',
+            user: 'mutangwe@outlook.com',
             pass: 'your-email-password'
         }
     });

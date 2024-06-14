@@ -39,3 +39,11 @@ footer {
     color: #ff8000;
     margin-bottom: 10px;
 }
+
+.form-group .invalid-feedback {
+    display: none;
+}
+
+.was-validated .form-group .invalid-feedback {
+    display: block;
+}
