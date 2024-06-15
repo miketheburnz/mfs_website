@@ -8,10 +8,16 @@ body {
 
 .navbar {
     margin-bottom: 20px;
+    background-color: white; /* White navbar */
+    color: black; /* Black text */
+}
+
+.navbar .nav-link {
+    color: black !important; /* Force text color to black */
 }
 
 .jumbotron {
-    background: linear-gradient(to bottom right, #d3d3d3, #c0c0c0, #ffffff);
+    background: linear-gradient(to bottom right, #0000FF, #FF0000, #FFFF00, #008000); /* Blue, Red, Yellow, Green gradient */
     color: white;
     margin-bottom: 0;
     position: relative;
@@ -34,7 +40,7 @@ body {
 }
 
 .jumbotron .logo-container {
-    max-width: 400px;
+    max-width: 200px; /* Make logo smaller */
     margin: 0 auto;
     z-index: 1;
 }
@@ -138,7 +144,7 @@ footer p {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 400px;
+    height: 300px; /* Make background image smaller */
 }
 
 .scroll-reveal {
