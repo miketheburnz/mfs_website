@@ -11,23 +11,43 @@ body {
 }
 
 .jumbotron {
-    background-color: #336699; /* Lighter blue background */
+    background: linear-gradient(to bottom right, #d3d3d3, #c0c0c0, #ffffff);
     color: white;
     margin-bottom: 0;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.jumbotron::before {
-    content: '';
+.jumbotron .artistic-background {
     position: absolute;
-    width: 200%;
+    width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    transform: rotate(45deg);
-    left: -50%;
     top: 0;
+    left: 0;
+    z-index: 0;
+    background: url('images/artistic-background.png') center center / cover no-repeat;
+    opacity: 0.2;
+}
+
+.jumbotron .logo-container {
+    max-width: 400px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.jumbotron .logo-container img {
+    width: 100%;
+    height: auto;
+}
+
+.jumbotron .lead,
+.jumbotron h1 {
+    z-index: 1;
+    position: relative;
 }
 
 .jumbotron .btn-primary {
@@ -65,7 +85,6 @@ footer {
 /* Additional Stylish Elements */
 
 header.jumbotron {
-    padding: 4rem 2rem;
     text-align: center;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -109,4 +128,24 @@ footer img {
 footer p {
     margin-top: 1rem;
     font-size: 1rem;
+}
+
+/* Parallax Scrolling */
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 400px;
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.scroll-reveal.reveal {
+    opacity: 1;
 }
