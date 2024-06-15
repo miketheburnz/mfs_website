@@ -17,7 +17,7 @@ body {
 }
 
 .jumbotron {
-    background: linear-gradient(to bottom right, #0000FF, #FF0000, #FFFF00, #008000); /* Blue, Red, Yellow, Green gradient */
+    background: linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5)); /* Lighter Blue, Red, Yellow, Green gradient */
     color: white;
     margin-bottom: 0;
     position: relative;
@@ -35,7 +35,7 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
-    background: url('images/artistic-background.png') center center / cover no-repeat;
+    background: url('images/geometric-pattern.svg') center center / cover no-repeat;
     opacity: 0.2;
 }
 
