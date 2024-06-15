@@ -11,6 +11,163 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/scripts.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+            background-color: white; /* White navbar */
+            color: black; /* Black text */
+        }
+
+        .navbar .nav-link {
+            color: black !important; /* Force text color to black */
+        }
+
+        .jumbotron {
+            position: relative;
+            color: white;
+            margin-bottom: 0;
+            overflow: hidden;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .jumbotron .artistic-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.5; /* Adjust the opacity to make text readable */
+        }
+
+        .jumbotron .logo-container {
+            max-width: 200px; /* Make logo smaller */
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .jumbotron .logo-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .jumbotron .lead,
+        .jumbotron h1 {
+            z-index: 1;
+            position: relative;
+        }
+
+        .jumbotron .btn-primary {
+            background-color: #ff6666; /* Light red color */
+            border: none;
+        }
+
+        footer {
+            background-color: #336699; /* Lighter blue background */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #services-overview .col-md-3 {
+            margin-bottom: 20px;
+        }
+
+        #services-overview .fa-4x {
+            color: #ff8000;
+            margin-bottom: 10px;
+        }
+
+        .form-group .invalid-feedback {
+            display: none;
+        }
+
+        .was-validated .form-group .invalid-feedback {
+            display: block;
+        }
+
+        /* Additional Stylish Elements */
+
+        header.jumbotron {
+            text-align: center;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section#services-overview {
+            background: linear-gradient(to bottom right, #ffffff 50%, #f4f4f4);
+            padding: 4rem 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section#services-overview h2 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #336699;
+        }
+
+        section#services-overview .col-md-3 {
+            padding: 2rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        section#services-overview .col-md-3:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        footer img {
+            margin: 0.5rem;
+            filter: brightness(0) invert(1);
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Parallax Scrolling */
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            height: 300px; /* Make background image smaller */
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .scroll-reveal.reveal {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,7 +188,35 @@
     </nav>
 
     <header class="jumbotron text-center">
-        <div class="artistic-background"></div>
+        <svg class="artistic-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+            <defs>
+                <linearGradient id="gradient1" gradientUnits="objectBoundingBox">
+                    <stop offset="0%" stop-color="#ff6666"/>
+                    <stop offset="100%" stop-color="#ffcc66"/>
+                </linearGradient>
+                <linearGradient id="gradient2" gradientUnits="objectBoundingBox">
+                    <stop offset="0%" stop-color="#ffcc66"/>
+                    <stop offset="100%" stop-color="#66ff66"/>
+                </linearGradient>
+                <linearGradient id="gradient3" gradientUnits="objectBoundingBox">
+                    <stop offset="0%" stop-color="#66ff66"/>
+                    <stop offset="100%" stop-color="#66ccff"/>
+                </linearGradient>
+                <linearGradient id="gradient4" gradientUnits="objectBoundingBox">
+                    <stop offset="0%" stop-color="#66ccff"/>
+                    <stop offset="100%" stop-color="#cc66ff"/>
+                </linearGradient>
+                <linearGradient id="gradient5" gradientUnits="objectBoundingBox">
+                    <stop offset="0%" stop-color="#cc66ff"/>
+                    <stop offset="100%" stop-color="#ff66cc"/>
+                </linearGradient>
+            </defs>
+            <path d="M0 200 Q400 0 800 200 T1600 200" fill="url(#gradient1)" />
+            <path d="M0 250 Q400 50 800 250 T1600 250" fill="url(#gradient2)" />
+            <path d="M0 300 Q400 100 800 300 T1600 300" fill="url(#gradient3)" />
+            <path d="M0 350 Q400 150 800 350 T1600 350" fill="url(#gradient4)" />
+            <path d="M0 400 Q400 200 800 400 T1600 400" fill="url(#gradient5)" />
+        </svg>
         <h1>Welcome to Mutangwe Financial Services</h1>
         <p class="lead">Providing expert financial services including financial reporting, tax planning, business advisory, and payroll services.</p>
         <a href="about.html" class="btn btn-primary btn-lg">Learn More</a>
@@ -41,6 +226,7 @@
         <h2 class="text-center">Our Services</h2>
         <div class="row">
             <div class="col-md-3 text-center scroll-reveal">
+               
                 <i class="fas fa-file-alt fa-4x"></i>
                 <h3>Financial Reporting</h3>
                 <p>We prepare financial statements that provide a clear picture of your financial position and performance.</p>
@@ -57,7 +243,7 @@
             </div>
             <div class="col-md-3 text-center scroll-reveal">
                 <i class="fas fa-money-check-alt fa-4x"></i>
-                                <h3>Payroll Services</h3>
+                <h3>Payroll Services</h3>
                 <p>We manage payroll processes, including calculations, deductions, and compliance with payroll laws.</p>
             </div>
         </div>
@@ -91,4 +277,3 @@
     </footer>
 </body>
 </html>
-
