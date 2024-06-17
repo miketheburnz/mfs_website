@@ -8,9 +8,11 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "nodemailer": "^6.4.17"
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13"
   },
   "author": "Your Name",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": []
 }

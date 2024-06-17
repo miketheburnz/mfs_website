@@ -17,7 +17,7 @@ body {
 }
 
 .jumbotron {
-    background: url('images/geometric_pattern.svg') center center / cover no-repeat, #2f63d391;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background color */
     color: white;
     margin-bottom: 0;
     position: relative;
@@ -26,6 +26,15 @@ body {
     padding: 4rem 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.jumbotron .content-box {
+    background: url('../images/geometric_pattern.jpg') center center / cover no-repeat, rgba(0, 38, 255, 0.308);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
 }
 
 .jumbotron .logo-container {
@@ -133,7 +142,7 @@ footer p {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 300px; /* Make background image smaller */
+    height: 50px; /* Make background image smaller */
 }
 
 .scroll-reveal {

@@ -6,9 +6,11 @@
     <title>Contact - Mutangwe Financial Services</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/3c4679893e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,22 +30,29 @@
         </div>
     </nav>
 
-    <section id="contact" class="container my-5">
-        <h2 class="text-center">Contact Us</h2>
-        <form action="/api/sendEmail" method="POST" class="needs-validation" novalidate>
+    <header class="jumbotron text-center">
+        <div class="content-box">
+            <h1>Contact Mutangwe Financial Services</h1>
+            <p class="lead">Get in touch with our team for any inquiries or support.</p>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2 class="text-center">Contact Form</h2>
+        <form action="/send" method="post" class="was-validated">
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
                 <div class="invalid-feedback">Please enter your name.</div>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-                <div class="invalid-feedback">Please enter a valid email.</div>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
             </div>
             <div class="form-group">
                 <label for="message">Message:</label>
-                <textarea class="form-control" id="message" name="message" required></textarea>
+                <textarea class="form-control" id="message" placeholder="Enter your message" name="message" rows="5" required></textarea>
                 <div class="invalid-feedback">Please enter your message.</div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -57,8 +66,7 @@
                     <img src="images/SAICA-Member-of.png" alt="SAICA Logo" height="50">
                 </div>
                 <div class="col-md-2">
-                    <img src="images/10310-SAICA-AGASA-CAMPAIGN-VECTOR-LOGO-01.png"
-                    alt="AGASA Logo" height="50">
+                    <img src="images/10310-SAICA-AGASA-CAMPAIGN-VECTOR-LOGO-01.png" alt="AGASA Logo" height="50">
                 </div>
                 <div class="col-md-2">
                     <img src="images/CIPC-logo.png" alt="CIPC Logo" height="50">
@@ -73,24 +81,5 @@
             <p>&copy; 2024 Mutangwe Financial Services</p>
         </div>
     </footer>
-
-    <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        var forms = document.getElementsByClassName('needs-validation');
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-    </script>
 </body>
 </html>
