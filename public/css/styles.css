@@ -17,7 +17,7 @@ body {
 }
 
 .jumbotron {
-    background: url('public/images/geometric_pattern.PNG') center center / cover no-repeat, #2f63d391;
+    background: url('images/geometric_pattern.svg') center center / cover no-repeat, #2f63d391;
     color: white;
     margin-bottom: 0;
     position: relative;
