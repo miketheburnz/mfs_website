@@ -6,204 +6,186 @@
   <title>Mutangwe Financial Services — Professional Accounting & Advisory</title>
   <meta name="description" content="Mutangwe Financial Services — financial reporting, tax planning, payroll and business advisory. Professional, accurate, and local service." />
 
-  <!-- Google font (optional) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #f7f9fb;
-      --card: #ffffff;
-      --accent: #0b5fff;
-      --muted: #6b7280;
-      --shadow: 0 6px 20px rgba(11,85,255,0.08);
-      --maxw: 1100px;
+      --bg:#f7f9fb; --card:#fff; --accent:#0b5fff; --muted:#6b7280; --maxw:1100px; --shadow:0 8px 30px rgba(11,85,255,0.06);
       font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{
-      margin:0; background:var(--bg); color:#0f172a; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-    }
-    .site{max-width:var(--maxw);margin:36px auto;padding:20px}
+    body{margin:0;background:var(--bg);color:#0f172a;-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--maxw);margin:36px auto;padding:20px}
 
     /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,#0b5fff,#5fb3ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{height:56px;width:56px;border-radius:10px;object-fit:cover}
+    .brand h1{font-size:16px;margin:0}
     nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
     nav a{color:var(--muted);text-decoration:none;font-weight:600}
     .cta{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
 
     /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 400px;gap:30px;align-items:center;margin-top:28px}
-    .hero h1{font-size:28px;margin:0 0 10px}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:28px}
+    .hero-visual{border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    .hero-visual img{width:100%;height:100%;display:block;object-fit:cover}
+    .hero h2{font-size:28px;margin:0 0 10px}
     .lead{color:var(--muted);margin:0 0 18px}
     .actions{display:flex;gap:10px}
-    .btn{padding:10px 14px;border-radius:8px;border:1px solid transparent;display:inline-block;text-decoration:none}
-    .btn-outline{background:white;border-color:#e6eefc;color:var(--accent);font-weight:700}
 
-    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
-
-    /* Services grid */
-    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
-    .service{display:flex;gap:12px;align-items:center}
+    /* Services */
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    .service{display:flex;gap:12px;align-items:flex-start}
     .service .icon{width:56px;height:56px;border-radius:10px;background:#eef6ff;display:flex;align-items:center;justify-content:center;font-weight:700}
     .service h3{margin:0;font-size:16px}
     .service p{margin:6px 0 0;color:var(--muted);font-size:14px}
 
-    /* Logos */
-    .trust{display:flex;gap:14px;align-items:center;margin-top:18px}
-    .trust img{height:36px;filter:grayscale(1);opacity:0.85}
+    /* Logos strip */
+    .trust{display:flex;gap:18px;align-items:center;margin-top:18px}
+    .trust img{height:44px;filter:grayscale(1);opacity:0.9}
 
-    /* About */
-    .about{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:36px;align-items:start}
-
-    /* Contact */
+    /* About + contact */
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:32px}
     form{display:grid;gap:12px}
     label{font-size:13px;color:var(--muted)}
-    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6eefc;background:white;font-size:14px}
-    textarea{min-height:120px;resize:vertical}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid #e6eefc;background:white;font-size:14px}
+    textarea{min-height:110px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+    .gallery img{width:100%;height:110px;object-fit:cover;border-radius:8px}
 
     footer{margin-top:36px;padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
 
     /* Responsive */
     @media (max-width:900px){
-      .hero{grid-template-columns:1fr;}
-      .about{grid-template-columns:1fr}
+      .hero{grid-template-columns:1fr}
+      .two-col{grid-template-columns:1fr}
       nav ul{display:none}
-      .mobile-nav{display:block}
     }
-    @media (min-width:901px){
-      .mobile-nav{display:none}
-    }
-
-    /* tiny helpers */
-    .muted{color:var(--muted)}
   </style>
 </head>
 <body>
-  <div class="site">
+  <div class="container">
     <header>
-      <div class="brand">
-        <div class="logo">MFS</div>
+      <div class="brand" aria-label="Mutangwe Financial Services">
+        <!-- Use the repo's logo if present (public/assets/logo.png). Fallback to text if missing. -->
+        <img src="/assets/logo.png" alt="MFS logo" onerror="this.style.display='none'" />
         <div>
-          <div style="font-weight:800">Mutangwe Financial Services</div>
-          <div class="muted" style="font-size:13px">Accounting · Tax · Payroll · Business Advisory</div>
+          <h1>Mutangwe Financial Services</h1>
+          <div style="color:var(--muted);font-size:13px">Accounting · Tax · Payroll · Advisory</div>
         </div>
       </div>
 
-      <nav>
+      <nav aria-label="Main navigation">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
       <div style="display:flex;gap:10px;align-items:center">
         <a class="cta" href="#contact">Get a Quote</a>
-        <button class="mobile-nav" aria-label="Open menu" onclick="toggleMenu()">☰</button>
       </div>
     </header>
 
     <main>
       <section id="home" class="hero">
         <div>
-          <h1>Professional financial services that help your business grow.</h1>
-          <p class="lead">We provide clear, compliant, and practical accounting, tax, payroll and advisory services for small and medium businesses in South Africa.</p>
+          <h2>Professional financial services that help your business grow.</h2>
+          <p class="lead">Clear, compliant, and practical accounting, tax, payroll and advisory services for small and medium businesses in South Africa.</p>
           <div class="actions">
-            <a class="btn cta" href="#contact">Request a Consultation</a>
-            <a class="btn btn-outline" href="#services">View Services</a>
+            <a class="cta" href="#contact">Request a Consultation</a>
+            <a class="btn" href="#services" style="padding:10px 12px;border-radius:10px;border:1px solid #e6eefc;text-decoration:none">View Services</a>
           </div>
 
-          <div class="services card" style="margin-top:20px">
-            <div class="service">
+          <div class="cards" id="services" aria-labelledby="services-heading">
+            <div class="card service">
               <div class="icon">FR</div>
               <div>
                 <h3>Financial Reporting</h3>
-                <p>Timely financial statements that present a clear picture of performance and position.</p>
+                <p>Clear financial statements and management reports to help you make better decisions.</p>
               </div>
             </div>
-            <div class="service">
+            <div class="card service">
               <div class="icon">TP</div>
               <div>
                 <h3>Tax Planning</h3>
-                <p>Proactive tax advice to minimise liabilities and stay compliant with SARS regulations.</p>
+                <p>Practical tax advice to reduce liabilities and ensure SARS compliance.</p>
               </div>
             </div>
-            <div class="service">
+            <div class="card service">
               <div class="icon">BA</div>
               <div>
                 <h3>Business Advisory</h3>
-                <p>Strategy and operational guidance to improve margins and cash-flow performance.</p>
+                <p>Strategy, cashflow forecasting and performance insights so you can grow with confidence.</p>
               </div>
             </div>
-            <div class="service">
+            <div class="card service">
               <div class="icon">PR</div>
               <div>
                 <h3>Payroll</h3>
-                <p>Full payroll processing, statutory submissions and payslip management.</p>
+                <p>Accurate payroll processing, statutory submissions and support for employee records.</p>
               </div>
             </div>
           </div>
 
-          <div class="trust">
-            <img alt="SAICA" src="/assets/saica.png">
-            <img alt="AGASA" src="/assets/agasa.png">
-            <img alt="CIPC" src="/assets/cipc.png">
+          <!-- Trust logos (using the repo images) -->
+          <div class="trust" aria-hidden="false">
+            <img src="/assets/saica.png" alt="SAICA logo" loading="lazy" onerror="this.style.display='none'">
+            <img src="/assets/agasa.png" alt="AGASA logo" loading="lazy" onerror="this.style.display='none'">
+            <img src="/assets/cipc.png" alt="CIPC logo" loading="lazy" onerror="this.style.display='none'">
           </div>
+
         </div>
 
-        <aside class="card">
-          <h3 style="margin-top:0">Quick facts</h3>
-          <p class="muted">Registered and compliant. Trusted by local businesses. Prompt and accurate reporting.</p>
-          <dl style="margin-top:12px">
-            <dt style="font-weight:700">Turnaround</dt>
-            <dd class="muted">Financial statements: 7–10 business days (typical)</dd>
-            <dt style="font-weight:700">Hours</dt>
-            <dd class="muted">Mon–Fri, 08:00–17:00</dd>
-          </dl>
-
-          <div style="margin-top:16px">
-            <a class="btn cta" href="#contact">Request a Quote</a>
-          </div>
+        <!-- Right column: visual hero using repo images if present -->
+        <aside class="hero-visual">
+          <picture>
+            <source srcset="/assets/hero-large.jpg" media="(min-width:801px)">
+            <source srcset="/assets/hero-small.jpg" media="(max-width:800px)">
+            <!-- Fallback: use a logo or solid gradient if no hero image present -->
+            <img src="/assets/hero-large.jpg" alt="Mutangwe Financial Services office or team" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#eef7ff,#f7fbff)';this.style.height='100%';this.style.display='block'">
+          </picture>
         </aside>
       </section>
 
-      <section id="about" class="about">
+      <section class="two-col" id="about">
         <div>
           <div class="card">
-            <h2 style="margin-top:0">About Mutangwe Financial Services</h2>
-            <p class="muted">Mutangwe Financial Services is a Pretoria-based practice offering accounting, tax and payroll services with a personal, hands-on approach. We specialise in helping small businesses get their bookkeeping, compliance and management reporting in order so owners can focus on running their business.</p>
+            <h3 style="margin-top:0">About Mutangwe Financial Services</h3>
+            <p style="color:var(--muted)">A Pretoria-based practice offering accounting, tax and payroll services with a personal, hands-on approach. We help small businesses get bookkeeping, compliance and management reporting in order so owners can focus on running the business.</p>
 
-            <h3>Why clients choose us</h3>
-            <ul>
-              <li class="muted">Practical, easy-to-understand advice</li>
-              <li class="muted">Reliable deadlines and transparent pricing</li>
-              <li class="muted">Local knowledge of South African regulation and SARS processes</li>
-            </ul>
+            <h4 style="margin-bottom:6px">Image gallery</h4>
+            <!-- Gallery: uses images in /assets/ — add team.jpg, office.jpg, receipts.jpg to show up -->
+            <div class="gallery" aria-hidden="false">
+              <img src="/assets/team.jpg" alt="Team photo" loading="lazy" onerror="this.style.display='none'">
+              <img src="/assets/office.jpg" alt="Office workspace" loading="lazy" onerror="this.style.display='none'">
+              <img src="/assets/documents.jpg" alt="Financial documents" loading="lazy" onerror="this.style.display='none'">
+            </div>
+
           </div>
         </div>
 
-        <aside class="card">
-          <h3 style="margin-top:0">Contact info</h3>
-          <p class="muted">Phone: +27 12 345 6789<br>Email: info@mutangwe.co.za<br>Location: Pretoria, South Africa</p>
+        <aside class="card" style="align-self:start" id="contact">
+          <h4 style="margin-top:0">Contact</h4>
+          <p style="color:var(--muted);margin:0">Phone: +27 12 345 6789<br>Email: info@mutangwe.co.za<br>Location: Pretoria, South Africa</p>
 
           <div style="margin-top:12px">
-            <a class="btn btn-outline" href="#contact">Send a message</a>
+            <a class="btn" href="tel:+27123456789" style="padding:10px 12px;border-radius:10px;text-decoration:none;border:1px solid #e6eefc;display:inline-block">Call Us</a>
           </div>
-        </aside>
-      </section>
 
-      <section id="contact" style="margin-top:28px">
-        <div class="card">
-          <h2 style="margin-top:0">Get in touch</h2>
-          <p class="muted">Send us a message and we’ll respond within 1 business day.</p>
+          <hr style="margin:12px 0;border:none;border-top:1px solid #f1f5f9">
 
+          <h4>Send a message</h4>
           <form id="contactForm" onsubmit="return submitForm(event)">
             <div>
               <label for="name">Full name</label>
@@ -219,42 +201,30 @@
             </div>
             <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
               <button type="submit" class="cta">Send message</button>
-              <div id="formStatus" class="muted" aria-live="polite"></div>
+              <div id="formStatus" style="color:var(--muted)" aria-live="polite"></div>
             </div>
           </form>
-        </div>
+        </aside>
       </section>
 
     </main>
 
     <footer>
-      <div class="muted">© " + new Date().getFullYear() + " Mutangwe Financial Services — All rights reserved</div>
+      <div style="color:var(--muted)">© " + new Date().getFullYear() + " Mutangwe Financial Services — All rights reserved</div>
     </footer>
   </div>
 
   <script>
-    function toggleMenu(){
-      alert('On small screens, use the nav links inside the page. (You can replace this with a slide-in menu.)')
-    }
-
     async function submitForm(e){
       e.preventDefault();
       const status = document.getElementById('formStatus');
       status.textContent = 'Sending...';
-      const payload = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        message: document.getElementById('message').value.trim()
-      };
-
+      const payload = { name: document.getElementById('name').value.trim(), email: document.getElementById('email').value.trim(), message: document.getElementById('message').value.trim() };
       try{
-        const res = await fetch('/api/sendEmail', {
-          method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload)
-        });
+        const res = await fetch('/api/sendEmail', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
         if(res.ok){ status.textContent = 'Message sent — we will reply soon.'; e.target.reset(); }
         else{ const txt = await res.text(); status.textContent = 'Failed to send: '+txt }
       }catch(err){ status.textContent = 'Network error: please try again later.' }
-
       return false;
     }
   </script>
